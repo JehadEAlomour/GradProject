@@ -1,0 +1,28 @@
+<resources>
+    <string name="app_name">GradProject</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="it_s_strawberry_season">It\'s strawberry season!</string>
+    <string name="shop_now">Shop Now!</string>
+    <string name="category">Category</string>
+    <string name="fruits_and_vegetables">Fruits And Vegetables</string>
+    <string name="olives_and_oils">Olives And Oils</string>
+    <string name="baked_goods">Baked goods</string>
+    <string name="jams_and_jars">Jams And Jars</string>
+    <string name="honey">Honey</string>
+    <string name="dairy_products">Dairy Products</string>
+    <string name="dates">Dates</string>
+    <string name="handcrafts">Handcrafts</string>
+    <string name="events">Events</string>
+    <string name="categories">Categories</string>
+    <string name="products">Products</string>
+    <string name="dash">___________________________________________</string>
+    <string name="rate">RATE</string>
+    <string name="review">REVIEW</string>
+    <string name="report">REPORT</string>
+    <string name="rating">Rating</string>
+    <string name="reviews">Reviews</string>
+    <string name="submit">submit</string>
+    <string name="report_mwssage">Please fill out form below to report any issues about product:</string>
+    <string name="your_reports">Your Reports</string>
+</resources>

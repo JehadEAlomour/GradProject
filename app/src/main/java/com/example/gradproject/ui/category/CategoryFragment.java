@@ -21,6 +21,7 @@ public class CategoryFragment extends Fragment {
     private CategoryAdapter adapter;
     private ArrayList<CategoryModel> list;
 
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -38,28 +39,34 @@ public class CategoryFragment extends Fragment {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        setDataOnList();
         initAdapter();
     }
 
+
     private void initAdapter() {
-        adapter=new CategoryAdapter(list,getLayoutInflater());
+        list = new ArrayList<>();
+        String[] nameList = getResources().getStringArray(R.array.CategoryIdList);
+
+        list.add(new CategoryModel(nameList[0], nameList[0], R.drawable.dairy2));
+        list.add(new CategoryModel(nameList[1], nameList[1], R.drawable.honey2));
+        list.add(new CategoryModel(nameList[2], nameList[2], R.drawable.shrak2));
+        list.add(new CategoryModel(nameList[3], nameList[3], R.drawable.jars2));
+        list.add(new CategoryModel(nameList[4], nameList[4], R.drawable.oil_and_olives2));
+        list.add(new CategoryModel(nameList[5], nameList[5], R.drawable.fruits2));
+        list.add(new CategoryModel(nameList[6], nameList[6], R.drawable.dates2));
+        list.add(new CategoryModel(nameList[7], nameList[7], R.drawable.handcrafts2));
+        list.add(new CategoryModel(nameList[8], nameList[8], R.drawable.dabkeeeee));
+        list.add(new CategoryModel(nameList[9], nameList[9], R.drawable.question));
+
+
+        adapter = new CategoryAdapter(list, getLayoutInflater());
         binding.rvCategory.setAdapter(adapter);
 
 
     }
-
-    private void setDataOnList() {
-        list = new ArrayList<>();
-        list.add(new CategoryModel("1", "Dairy Products", R.drawable.dairy2));
-        list.add(new CategoryModel("2", "Fruits And Vegetables", R.drawable.fruits2));
-        list.add(new CategoryModel("3", "Olives And Oils", R.drawable.oil_and_olives2));
-        list.add(new CategoryModel("4", "Baked goods", R.drawable.shrak2));
-        list.add(new CategoryModel("5", "Jams And Jars", R.drawable.jars2));
-        list.add(new CategoryModel("6", "Honey", R.drawable.honey2));
-        list.add(new CategoryModel("7", "Dates", R.drawable.dates2));
-        list.add(new CategoryModel("8", "Handcrafts", R.drawable.handcrafts2));
-        list.add(new CategoryModel("9", "Events", R.drawable.dabkeeeee));
-
+    void onClick(View view)
+    {
     }
+
+
 }

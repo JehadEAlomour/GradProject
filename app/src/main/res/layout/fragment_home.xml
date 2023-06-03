@@ -27,25 +27,34 @@
         android:textColor="@color/white"
         android:textSize="48sp"
         app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        />
-    <Button
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
         android:id="@+id/btnShopNow"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="532dp"
-        android:background="@color/_12ffffff"
         android:fontFamily="sans-serif-black"
         android:onClick="btnShop"
-        android:outlineProvider="background"
         android:text="@string/shop_now"
-        android:textSize="20sp"
-        app:cornerRadius="50sp"
+        android:textColor="@color/white"
+        android:textSize="25sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/btn_login"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_10dp"
+        android:fontFamily="sans-serif-black"
+        android:text="Login"
         android:textColor="@color/white"
-        />
+        android:textSize="25sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/btnShopNow" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

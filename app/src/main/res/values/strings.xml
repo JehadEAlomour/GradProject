@@ -25,4 +25,74 @@
     <string name="submit">submit</string>
     <string name="report_mwssage">Please fill out form below to report any issues about product:</string>
     <string name="your_reports">Your Reports</string>
+    <string name="add_category">Add Category</string>
+    <string name="enter_id">   Enter ID</string>
+    <string name="name_of_product">  Name of product</string>
+    <string name="link_of_photo">  Link of Photo</string>
+    <string name="add">ADD</string>
+    <string name="hello">Hello!</string>
+    <string name="name">Name :</string>
+    <string name="phone_number">Phone Number :</string>
+    <string name="email">Email :</string>
+    <string name="password">Password</string>
+    <string name="are_you_a">Are you a :</string>
+    <string name="customer">Customer</string>
+    <string name="vendor">Vendor</string>
+    <string name="register">Register</string>
+    <string name="edit_profile">Edit Profile</string>
+    <string name="view_product">View Product</string>
+    <string name="subscribe_to_premium_subscription">Subscribe to Premium Subscription</string>
+    <string name="recommendation_referrals">Recommendation Referrals</string>
+    <string name="recommendation_Text">Recommend a Product or Vendor that you have tried and would love to purchase from again . </string>
+    <string name="write_here">Write here...</string>
+    <string name="about_us">About Us</string>
+    <string name="aboutUsText">Welcome to Namliytech, the ultimate place for finding seasonal products and discovering the workshops taking place in Jordan! Our goal is to preserve the Jordanian heritage and support local businesses and startups. \n \n We believe in transparency, trust, and making a difference which is why we aim to endorse these values in every action we perform. Our team always strives to improve as well as update our services in order to give you an enjoyable experience on our app.\n \nWhether you are a local citizen or a resident who is looking for local traditional products or services, our application has everything in order for you to discover, connect and engage with the local community.</string>
+    <string name="contact_us">Contact Us</string>
+    <string name="premium">NamilyTech coud utillze the Information it
+garthers about customer buying partterns ,statisics, and consumer behavior
+to provide data analyics services to suppliers.</string>
+    <string name="contactUsInfo">        Email: namliytech@gmail.com
+        Phone Number: 0796754324</string>
+    <string name="login">Login:</string>
+    <string name="enter_your_email_address">Enter your Email Address</string>
+    <string name="enter_your_password">Enter your Password</string>
+    <string name="loginBtn">Login</string>
+    <string name="location">Location :</string>
+    <string name="one_time_register_fees_10jd">One Time register fees: 10JD</string>
+    <string name="yes">Yes</string>
+    <string name="no">No</string>
+    <string name="premium_subscriptions">Premium Subscriptions</string>
+    <string name="duration_and_fees">Duration and fees:</string>
+    <string name="PaymentFees">1 Month:5JD
+5 Month:15 JD</string>
+    <string name="edit_product">Edit Product</string>
+    <string name="openDraw">Open navigation drawer</string>
+    <string name="closeDraw">Close navigation drawer</string>
+    <string name="boost">Boost</string>
+    <string name="addItem">+ ADD</string>
+    <string name="product_category">Product Category</string>
+    <string name="product_name">Product Name:</string>
+    <string name="product_description">Product Description:</string>
+    <string name="price">Price:</string>
+    <string name="add_photo">Add Photo:</string>
+    <string name="city">City:</string>
+    <string name="delivery">Delivery</string>
+    <string name="ad_type">Ad Type</string>
+    <string name="done">Done</string>
+    <string name="enter_phone_number">Enter Phone Number</string>
+    <string name="ok">Ok</string>
+    <string name="your_rating">Your Rating:</string>
+    <string name="space2">______________________________</string>
+    <string-array name="CategoryIdList">
+        <item>Dairy Product</item>
+        <item>Honey</item>
+        <item>Baked Goods</item>
+        <item>Jams and Jars</item>
+        <item>Olives and oils</item>
+        <item>Fruits and Vegetables</item>
+        <item>Dates</item>
+        <item>Hand Crafts</item>
+        <item>Events</item>
+        <item>Otherwise</item>
+    </string-array>
 </resources>

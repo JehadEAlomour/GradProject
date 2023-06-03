@@ -9,65 +9,92 @@
         android:id="@+id/splashFragment"
         android:name="com.example.gradproject.ui.splash.SplashFragment"
         android:label="fragment_spalsh"
-        tools:layout="@layout/fragment_spalsh" >
-        <action
-            android:id="@+id/action_splashFragment_to_homeFragment"
-            app:destination="@id/homeFragment" />
-    </fragment>
+        tools:layout="@layout/fragment_spalsh" />
     <fragment
-        android:id="@+id/homeFragment"
+        android:id="@+id/itemHome"
         android:name="com.example.gradproject.ui.home.HomeFragment"
         android:label="fragment_home"
-        tools:layout="@layout/fragment_home" >
-        <action
-            android:id="@+id/action_homeFragment_to_categoryFragment"
-            app:destination="@id/categoryFragment" />
-    </fragment>
+        tools:layout="@layout/fragment_home" />
     <fragment
         android:id="@+id/categoryFragment"
         android:name="com.example.gradproject.ui.category.CategoryFragment"
         android:label="fragment_category"
-        tools:layout="@layout/fragment_category" >
-        <action
-            android:id="@+id/action_categoryFragment_to_productListFragment"
-            app:destination="@id/productListFragment" />
-    </fragment>
+        tools:layout="@layout/fragment_category" />
     <fragment
         android:id="@+id/productListFragment"
         android:name="com.example.gradproject.ui.productList.ProductListFragment"
         android:label="fragment_product_list"
-        tools:layout="@layout/fragment_product_list" >
-        <action
-            android:id="@+id/action_productListFragment_to_productDescriptionFragment2"
-            app:destination="@id/productDescriptionFragment" />
-    </fragment>
+        tools:layout="@layout/fragment_product_list" />
     <fragment
         android:id="@+id/productDescriptionFragment"
         android:name="com.example.gradproject.ui.productDescrption.ProductDescriptionFragment"
-        android:label="ProductDescriptionFragment" >
-        <action
-            android:id="@+id/action_productDescriptionFragment_to_reviewFragment"
-            app:destination="@id/reviewFragment" />
-        <action
-            android:id="@+id/action_productDescriptionFragment_to_reportFragment"
-            app:destination="@id/reportFragment" />
-    </fragment>
+        android:label="ProductDescriptionFragment" />
     <fragment
         android:id="@+id/reportFragment"
         android:name="com.example.gradproject.ui.reviewAndReport.ReportFragment"
         android:label="fragment_report"
-        tools:layout="@layout/fragment_report" >
-        <action
-            android:id="@+id/action_reportFragment_to_productDescriptionFragment"
-            app:destination="@id/productDescriptionFragment" />
-    </fragment>
+        tools:layout="@layout/fragment_report" />
     <fragment
         android:id="@+id/reviewFragment"
         android:name="com.example.gradproject.ui.reviewAndReport.ReviewFragment"
         android:label="fragment_review"
-        tools:layout="@layout/fragment_review" >
-        <action
-            android:id="@+id/action_reviewFragment_to_productDescriptionFragment"
-            app:destination="@id/productDescriptionFragment" />
-    </fragment>
+        tools:layout="@layout/fragment_review" />
+    <fragment
+        android:id="@+id/addCategoryFragment"
+        android:name="com.example.gradproject.ui.category.CategoryFragment"
+        android:label="fragment_add_category"
+        tools:layout="@layout/fragment_category" />
+    <fragment
+        android:id="@+id/itemRegister"
+        android:name="com.example.gradproject.ui.Register.RegisterFragment"
+        android:label="fragment_register"
+        tools:layout="@layout/fragment_register" />
+    <fragment
+        android:id="@+id/itemLogin"
+        android:name="com.example.gradproject.ui.Register.LoginFragment"
+        android:label="fragment_login"
+        tools:layout="@layout/fragment_login" />
+    <fragment
+        android:id="@+id/paymentFragment"
+        android:name="com.example.gradproject.ui.Register.PaymentFragment"
+        android:label="fragment_payment"
+        tools:layout="@layout/fragment_payment" />
+    <fragment
+        android:id="@+id/itemProfile"
+        android:name="com.example.gradproject.ui.profile.ProfileFragment"
+        android:label="ProfileFragment" />
+    <fragment
+        android:id="@+id/editProfileFragment"
+        android:name="com.example.gradproject.ui.profile.EditProfileFragment"
+        android:label="EditProfileFragment" />
+    <fragment
+        android:id="@+id/premiumFragment"
+        android:name="com.example.gradproject.ui.profile.PremiumFragment"
+        android:label="fragment_premium"
+        tools:layout="@layout/fragment_premium" />
+    <fragment
+        android:id="@+id/boostProductFragment"
+        android:name="com.example.gradproject.ui.productList.BoostProductFragment"
+        android:label="fragment_boost_product"
+        tools:layout="@layout/fragment_boost_product" />
+    <fragment
+        android:id="@+id/viewProductFragment"
+        android:name="com.example.gradproject.ui.profile.ViewProductFragment"
+        android:label="fragment_view_product"
+        tools:layout="@layout/fragment_view_product" />
+    <fragment
+        android:id="@+id/rateFragment"
+        android:name="com.example.gradproject.ui.reviewAndReport.RateFragment"
+        android:label="fragment_rate"
+        tools:layout="@layout/fragment_rate" />
+    <fragment
+        android:id="@+id/item_about"
+        android:name="com.example.gradproject.ui.recommendation.AboutAsFragment"
+        android:label="fragment_about_as"
+        tools:layout="@layout/fragment_about_as" />
+    <fragment
+        android:id="@+id/itemRecommendation"
+        android:name="com.example.gradproject.ui.recommendation.RecommendationReferralsFragment"
+        android:label="fragment_recommendation_referrals"
+        tools:layout="@layout/fragment_recommendation_referrals" />
 </navigation>

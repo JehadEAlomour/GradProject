@@ -1,0 +1,30 @@
+{
+  "project_info": {
+    "project_number": "869464549399",
+    "firebase_url": "https://gradproject-605bc-default-rtdb.firebaseio.com",
+    "project_id": "gradproject-605bc",
+    "storage_bucket": "gradproject-605bc.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:869464549399:android:492d80dce2077932729452",
+        "android_client_info": {
+          "package_name": "com.example.gradproject"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDm_d-vtdWDW6Q0AEHwEmuiW2j-y9Ls20k"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

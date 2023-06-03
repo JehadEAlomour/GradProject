@@ -32,7 +32,7 @@ public class SplashFragment extends Fragment {
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
-                Navigation.findNavController(view).navigate(R.id.homeFragment);
+                Navigation.findNavController(view).navigate(R.id.itemHome);
             }
         }, 5000);
 

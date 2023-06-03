@@ -13,9 +13,14 @@ import androidx.navigation.Navigation;
 
 import com.example.gradproject.R;
 import com.example.gradproject.databinding.FragmentReportBinding;
+import com.example.gradproject.ui.productList.ProductModel;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 public class ReportFragment extends Fragment {
     FragmentReportBinding binding;
+    ProductModel productModel;
+    DatabaseReference reference = FirebaseDatabase.getInstance().getReferenceFromUrl("https://gradproject-605bc-default-rtdb.firebaseio.com/App/Reports");
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -34,16 +39,24 @@ public class ReportFragment extends Fragment {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
+        getArgs();
         onClick();
+    }
+
+    private void getArgs() {
+        productModel = getArguments().getParcelable("item");
+
     }
 
     private void onClick() {
         binding.btnSubmit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Navigation.findNavController(view).navigate(R.id.productDescriptionFragment);
+                if (!binding.etReport.getText().toString().isEmpty()){
+                reference.child(productModel.getName()).child("Text").setValue(binding.etReport.getText().toString());
+                Navigation.findNavController(view).navigate(R.id.categoryFragment);
                 Toast.makeText(getContext(), "Thanks", Toast.LENGTH_SHORT).show();
-            }
+            }}
         });
     }
 }

@@ -1,5 +1,9 @@
 package com.example.gradproject.ui.category;
 
+
+import static androidx.navigation.Navigation.findNavController;
+
+import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -22,9 +26,6 @@ public class CategoryAdapter extends RecyclerView.Adapter<CategoryAdapter.Catego
         this.layoutInflater = layoutInflater;
     }
 
-    public CategoryAdapter(ArrayList<CategoryModel> list) {
-        this.list = list;
-    }
 
     @NonNull
     @Override
@@ -37,11 +38,13 @@ public class CategoryAdapter extends RecyclerView.Adapter<CategoryAdapter.Catego
     public void onBindViewHolder(@NonNull CategoryHolder holder, int position) {
         CategoryModel dataModel = list.get(position);
         holder.bind(dataModel);
-        holder.binding.ivPhoto.setImageResource(dataModel.getPhoto());
-        holder.binding.tvCategory.setOnClickListener(new View.OnClickListener() {
+        holder.binding.view.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Navigation.findNavController(view).navigate(R.id.productListFragment);
+                Bundle bundle= new Bundle();
+                bundle.putString("id",dataModel.getCategoryID());
+                findNavController(view).navigate(R.id.productListFragment,bundle);
+
             }
         });
 
@@ -53,7 +56,7 @@ public class CategoryAdapter extends RecyclerView.Adapter<CategoryAdapter.Catego
     }
 
 
-    class CategoryHolder extends RecyclerView.ViewHolder {
+    static class CategoryHolder extends RecyclerView.ViewHolder {
         public CategoryRowBinding binding;
 
         public CategoryHolder(CategoryRowBinding binding) {
@@ -63,7 +66,8 @@ public class CategoryAdapter extends RecyclerView.Adapter<CategoryAdapter.Catego
 
         public void bind(CategoryModel model) {
 
-            binding.setModel(model);
+            binding.tvCategory.setText(model.getCategoryName());
+            binding.ivPhoto.setImageResource(model.getPhoto());
 
         }
 

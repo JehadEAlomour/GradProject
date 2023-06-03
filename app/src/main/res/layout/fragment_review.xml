@@ -7,27 +7,6 @@
     android:background="@drawable/real"
     tools:context=".ui.reviewAndReport.ReviewFragment">
 
-    <TextView
-        android:id="@+id/tv_Rating"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="10dp"
-        android:layout_marginTop="20dp"
-        android:fontFamily="@font/lato"
-        android:text="@string/rating"
-        android:textColor="@color/darkBlue"
-        android:textSize="25sp"
-        android:textStyle="bold"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <RatingBar
-        android:id="@+id/rating_bar"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_margin="10dp"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/tv_Rating" />
 
     <TextView
         android:id="@+id/tv_review"
@@ -41,29 +20,19 @@
         android:textSize="25sp"
         android:textStyle="bold"
         app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/rating_bar" />
+        app:layout_constraintTop_toTopOf="parent" />
 
-    <EditText
-        android:id="@+id/et_review"
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv"
         android:layout_width="match_parent"
-        android:layout_height="300dp"
-        android:layout_margin="10dp"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/tv_review" />
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
 
-    <Button
-        android:id="@+id/btn_submit"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_margin="10dp"
-        android:backgroundTint="@color/darkBlue"
-        android:text="@string/submit"
-        android:textColor="@color/white"
-        android:textAllCaps="true"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/et_review" />
+        app:layout_constraintTop_toBottomOf="@id/tv_review"
+        tools:listitem="@layout/row_rev" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

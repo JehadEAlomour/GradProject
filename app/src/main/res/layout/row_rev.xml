@@ -23,7 +23,7 @@
             android:layout_marginStart="@dimen/_10dp"
             android:layout_marginTop="20dp"
             android:text="@{model.name}"
-            android:textColor="@color/darkBlue"
+            android:textColor="@color/white"
             android:textSize="20dp"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintTop_toTopOf="parent"
@@ -35,18 +35,18 @@
             android:id="@+id/tv_text"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginStart="@dimen/_10dp"
             android:layout_marginTop="20dp"
             android:text="@{model.text}"
-            android:textColor="@color/darkBlue"
+            android:textColor="@color/white"
             android:textSize="20dp"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintTop_toBottomOf="@id/tv_name"
-            tools:text="None"
 
-            />
+            tools:text="None" />
 
         <TextView
+            android:id="@+id/textView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center"

@@ -25,7 +25,7 @@ import com.google.firebase.database.FirebaseDatabase;
 public class BoostProductFragment extends Fragment {
     FragmentBoostProductBinding binding;
     private String CATEGORY_ID = "";
-    private VendorModel vendorModel = new VendorModel("jehad", "0795670069", "jehad@gmail.com", "12345678", "zarqa", "jehad", "now", "now", "today");
+//    private VendorModel vendorModel ;
     private final DatabaseReference reference = FirebaseDatabase.getInstance().getReferenceFromUrl("https://gradproject-605bc-default-rtdb.firebaseio.com/App/Product");
 
 
@@ -46,9 +46,14 @@ public class BoostProductFragment extends Fragment {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
+//        getData();
         initSpinner();
         onCLickDone();
     }
+
+//    private void getData() {
+//        vendorModel=getArguments().getParcelable("vendor");
+//    }
 
     private void initSpinner() {
         ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(getContext(), R.array.CategoryIdList, android.R.layout.simple_spinner_item);
@@ -87,7 +92,7 @@ public class BoostProductFragment extends Fragment {
     private void setDataOnFireBase(View view) {
         ProductModel model = new ProductModel(binding.etProductName.getText().toString(), binding.etProductName.getText().toString()
                 , binding.etDesc.getText().toString(), binding.etPhoto.getText().toString(), binding.etPrice.getText().toString()
-                , vendorModel.getVendorId(), binding.etLocation.getText().toString(), vendorModel.getPhoneNumber(),CATEGORY_ID);
+                , "vendorModel.getVendorId()", binding.etLocation.getText().toString(), "vendorModel.getPhoneNumber()",CATEGORY_ID);
 
         reference.child(model.getName()).child("productId").setValue(model.getProductId());
         reference.child(model.getName()).child("name").setValue(model.getName());

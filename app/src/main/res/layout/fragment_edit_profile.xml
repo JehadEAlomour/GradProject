@@ -107,7 +107,7 @@
         app:layout_constraintTop_toBottomOf="@id/tv_phoneNumber" />
 
     <EditText
-        android:id="@+id/location"
+        android:id="@+id/et_location"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginLeft="@dimen/_10dp"
@@ -115,6 +115,17 @@
         app:layout_constraintLeft_toRightOf="@id/tv_city"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@id/tv_email" />
+
+    <Button
+        android:id="@+id/btn_edit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:backgroundTint="@color/darkBlue"
+        android:text="Submit"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_city" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

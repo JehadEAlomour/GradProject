@@ -2,6 +2,8 @@ package com.example.gradproject.ui.profile;
 
 import static androidx.navigation.Navigation.findNavController;
 
+import static com.example.gradproject.ui.Register.LoginFragment.IS_VENDOR;
+
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -23,6 +25,7 @@ public class ProfileFragment extends Fragment {
     SharedPreferences sharedPreferences;
     CustomerModel customerModel;
     VendorModel vendorModel;
+    String phone;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -43,17 +46,14 @@ public class ProfileFragment extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         getDataFromPref();
-        onCLickInSub();
-        onClickInViewProducts();
-        onClickInEditProfile();
 
 
     }
 
     private void getDataFromPref() {
         sharedPreferences = getActivity().getSharedPreferences("User", getContext().MODE_PRIVATE);
-        boolean type = sharedPreferences.getBoolean("vendor", false);
-        if (type) {
+        boolean type = sharedPreferences.getBoolean("vendor", true);
+        if (IS_VENDOR) {
             vendorModel = new VendorModel(
                     sharedPreferences.getString("Name", "none"),
                     sharedPreferences.getString("VendorId", "none"),
@@ -61,7 +61,8 @@ public class ProfileFragment extends Fragment {
                     sharedPreferences.getString("phoneNumber", "none"),
                     sharedPreferences.getString("email", "none")
             );
-            Toast.makeText(getContext(), "" + vendorModel.getNameUser(), Toast.LENGTH_SHORT).show();
+            phone = vendorModel.getPhoneNumber();
+            setVendor(vendorModel);
         } else {
             customerModel = new CustomerModel(
                     sharedPreferences.getString("Name", "none"),
@@ -71,8 +72,66 @@ public class ProfileFragment extends Fragment {
                     sharedPreferences.getString("email", "none"),
                     sharedPreferences.getString("password", "none")
             );
-            Toast.makeText(getContext(), "" + vendorModel.getNameUser(), Toast.LENGTH_SHORT).show();
+            setCustomer(customerModel);
+//            onCLickInSub();
         }
+    }
+
+    private void setVendor(VendorModel vendorModel) {
+        binding.setModel(new User(vendorModel.getNameUser(), vendorModel.getPhoneNumber(), vendorModel.getEmail(), vendorModel.getPassword(), vendorModel.getLocation()));
+        binding.tvEditProfile.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Bundle bundle = new Bundle();
+                bundle.putString("phoneNumber", vendorModel.getPhoneNumber());
+                bundle.putString("path", "Vendor");
+                findNavController(view).navigate(R.id.editProfileFragment, bundle);
+            }
+        });
+        binding.tvViewProduct.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Bundle bundle = new Bundle();
+                bundle.putString("phoneNumber", phone);
+                findNavController(view).navigate(R.id.boostProductFragment);
+            }
+        });
+        binding.tvSubscribe.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Bundle bundle = new Bundle();
+                bundle.putParcelable("vendor", vendorModel);
+                findNavController(view).navigate(R.id.premiumFragment);
+            }
+        });
+
+
+    }
+
+    private void setCustomer(CustomerModel customerModel) {
+        binding.setModel(new User(customerModel.getNameUser(), customerModel.getPhoneNumber(), customerModel.getEmail(), customerModel.getPassword(), customerModel.getLocation()));
+        binding.tvSubscribe.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Toast.makeText(getContext(), "Your just a customer", Toast.LENGTH_SHORT).show();
+            }
+        });
+        binding.tvViewProduct.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Toast.makeText(getContext(), "Your just a customer", Toast.LENGTH_SHORT).show();
+
+            }
+        });
+        binding.tvEditProfile.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Bundle bundle = new Bundle();
+                bundle.putString("phoneNumber", customerModel.getPhoneNumber());
+                bundle.putString("path", "Customer");
+                findNavController(view).navigate(R.id.editProfileFragment, bundle);
+            }
+        });
     }
 
 
@@ -95,5 +154,6 @@ public class ProfileFragment extends Fragment {
                 findNavController(view).navigate(R.id.editProfileFragment);
             }
         });
+
     }
 }

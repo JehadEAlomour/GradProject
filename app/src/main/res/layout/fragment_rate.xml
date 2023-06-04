@@ -23,10 +23,11 @@
 
     <RatingBar
         android:id="@+id/rb_item"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/_10dp"
         android:numStars="5"
+        app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintTop_toBottomOf="@id/tv_Rating" />
 
@@ -36,6 +37,7 @@
         android:layout_height="300dp"
         android:gravity="start"
         android:hint="@string/your_rating"
+        android:layout_marginTop="@dimen/_10dp"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@id/rb_item" />

@@ -84,7 +84,7 @@ public class RegisterFragment extends Fragment {
             );
 
             reference.child("Customer").child(binding.etPhoneNumber.getText().toString()).child("customerId").setValue(model.getCustomerId());
-            reference.child("Customer").child(binding.etPhoneNumber.getText().toString()).child("vendorId").setValue(model.getVendorId());
+            reference.child("Customer").child(binding.etPhoneNumber.getText().toString()).child("vendorId").setValue(model.getPhoneNumber());
             reference.child("Customer").child(binding.etPhoneNumber.getText().toString()).child("nameUser").setValue(model.getNameUser());
             reference.child("Customer").child(binding.etPhoneNumber.getText().toString()).child("phoneNumber").setValue(model.getPhoneNumber());
             reference.child("Customer").child(binding.etPhoneNumber.getText().toString()).child("email").setValue(model.getEmail());

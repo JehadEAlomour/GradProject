@@ -48,6 +48,12 @@ public class HomeFragment extends Fragment {
                 btnLogin(view);
             }
         });
+        binding.ivProfile.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                findNavController(view).navigate(R.id.itemProfile);
+            }
+        });
     }
 
     public void btnShop(View view) {

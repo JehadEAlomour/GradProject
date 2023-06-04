@@ -11,7 +11,6 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
 import com.example.gradproject.databinding.FragmentViewProductBinding;
-import com.example.gradproject.ui.Register.VendorModel;
 import com.example.gradproject.ui.productList.ProductModel;
 import com.example.gradproject.ui.productList.ViewProductAdapter;
 import com.google.firebase.database.DataSnapshot;
@@ -25,7 +24,7 @@ import java.util.ArrayList;
 
 public class ViewProductFragment extends Fragment {
     private FragmentViewProductBinding binding;
-    private VendorModel model;
+    private String model;
     private ArrayList<ProductModel> list = new ArrayList<>();
     private ViewProductAdapter adapter;
 
@@ -49,18 +48,24 @@ public class ViewProductFragment extends Fragment {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
+        getVendorModel();
         getDataFromFireBase();
+    }
+
+    private void getVendorModel() {
+        model = getArguments().getString("phoneNumber");
+
+
     }
 
     private void getDataFromFireBase() {
         reference.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
-                if (snapshot.hasChild(model.getVendorId())) {
+                if (snapshot.hasChild(model)) {
                     snapshot.getChildren().forEach(dataSnapshot ->
                             {
-                                if (snapshot.hasChild(model.getVendorId()))
-                                    list.add(snapshot.getValue(ProductModel.class));
+                                list.add(snapshot.getValue(ProductModel.class));
                             }
                     );
                 }

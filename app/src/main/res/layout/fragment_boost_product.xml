@@ -166,9 +166,11 @@
     <EditText
         android:id="@+id/et_photo"
         android:layout_width="0dp"
+        android:singleLine="false"
         android:layout_height="wrap_content"
         android:layout_marginLeft="5dp"
         android:layout_marginTop="@dimen/_10dp"
+        app:layout_constraintBottom_toTopOf="@id/et_location"
         android:textSize="20sp"
         app:layout_constraintLeft_toRightOf="@id/tv_photo"
         app:layout_constraintRight_toRightOf="parent"

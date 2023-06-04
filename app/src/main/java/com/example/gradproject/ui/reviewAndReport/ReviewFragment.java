@@ -25,7 +25,7 @@ public class ReviewFragment extends Fragment {
     FragmentReviewBinding binding;
     DatabaseReference reference = FirebaseDatabase.getInstance().getReferenceFromUrl("https://gradproject-605bc-default-rtdb.firebaseio.com/App/Review");
     private AdapterReview adapter;
-    private ArrayList<ReviewModel> list = new ArrayList<>();
+    private ArrayList<ReviewModel> list;
     private ProductModel productModel;
 
 
@@ -49,7 +49,6 @@ public class ReviewFragment extends Fragment {
         super.onViewCreated(view, savedInstanceState);
         getArgs();
         getReviewFromFireBase();
-        initAdapter();
 
 
     }
@@ -57,15 +56,17 @@ public class ReviewFragment extends Fragment {
     private void getArgs() {
         assert getArguments() != null;
         productModel = getArguments().getParcelable("item");
+//        initAdapter();
         Log.d("TAGmodle", "getArgs: " + productModel.getProductId());
     }
 
-    private void initAdapter() {
-        adapter = new AdapterReview(list, getLayoutInflater());
-        binding.rv.setAdapter(adapter);
-
-
-    }
+//    private void initAdapter() {
+//        list=new ArrayList<>();
+//        adapter = new AdapterReview(list, getLayoutInflater());
+//        binding.rv.setAdapter(adapter);
+//
+//
+//    }
 
     private void getReviewFromFireBase() {
         reference.addValueEventListener(new ValueEventListener() {
@@ -73,13 +74,11 @@ public class ReviewFragment extends Fragment {
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 for (DataSnapshot dataSnapshot : snapshot.getChildren()) {
                     ReviewModel model = dataSnapshot.getValue(ReviewModel.class);
-                    assert model != null;
-                    if (model.getProductId().equals(productModel.getProductId())) {
-                        list.add(model);
-                        Toast.makeText(getContext(), "" + model.getText() + " " + model.getName(), Toast.LENGTH_SHORT).show();
+//                    list.add(model);
+                    binding.tvText.setText(model.getText());
+                    binding.tvName.setText(model.getName());
+                    Toast.makeText(getContext(), "" + model.getText() + " " + model.getName(), Toast.LENGTH_SHORT).show();
 
-
-                    }
 
                 }
 
@@ -91,7 +90,6 @@ public class ReviewFragment extends Fragment {
 
             }
         });
-
     }
 
 

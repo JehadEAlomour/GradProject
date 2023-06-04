@@ -25,6 +25,7 @@ import com.google.firebase.database.ValueEventListener;
 public class LoginFragment extends Fragment {
     private FragmentLoginBinding binding;
     SharedPreferences sharedPref;
+    public static boolean IS_VENDOR;
 
 
     private final DatabaseReference reference = FirebaseDatabase.getInstance().getReferenceFromUrl("https://gradproject-605bc-default-rtdb.firebaseio.com/Users");
@@ -83,6 +84,7 @@ public class LoginFragment extends Fragment {
             reference.child("Vendor").addListenerForSingleValueEvent(new ValueEventListener() {
                 @Override
                 public void onDataChange(@NonNull DataSnapshot snapshot) {
+                    IS_VENDOR=true;
                     if (snapshot.hasChild(binding.etPhoneNumber.getText().toString())) {
                         final String getPassword = snapshot.child(binding.etPhoneNumber.getText().toString()).child("password").getValue(String.class);
                         assert getPassword != null;
@@ -92,12 +94,14 @@ public class LoginFragment extends Fragment {
                             String email = snapshot.child(binding.etPhoneNumber.getText().toString()).child("email").getValue(String.class);
                             String location = snapshot.child(binding.etPhoneNumber.getText().toString()).child("location").getValue(String.class);
                             String phoneNumber = snapshot.child(binding.etPhoneNumber.getText().toString()).child("phoneNumber").getValue(String.class);
+                            String password = getPassword;
                             editor.putBoolean("vendor", true);
                             editor.putString("Name", nameUser);
                             editor.putString("VendorId", vendorId);
                             editor.putString("location", location);
                             editor.putString("phoneNumber", phoneNumber);
                             editor.putString("email", email);
+                            editor.putString("password", password);
                             editor.commit();
                             Toast.makeText(getContext(), "Welcome!", Toast.LENGTH_SHORT).show();
 
@@ -118,6 +122,7 @@ public class LoginFragment extends Fragment {
             reference.child("Customer").addListenerForSingleValueEvent(new ValueEventListener() {
                 @Override
                 public void onDataChange(@NonNull DataSnapshot snapshot) {
+                    IS_VENDOR=false;
                     if (snapshot.hasChild(binding.etPhoneNumber.getText().toString())) {
                         final String getPassword = snapshot.child(binding.etPhoneNumber.getText().toString()).child("password").getValue(String.class);
                         assert getPassword != null;
